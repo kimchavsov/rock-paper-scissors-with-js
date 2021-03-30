@@ -8,4 +8,4 @@ This project is building for the purpose of learning
 I open to get feedback. 
 Please contact me via: kimchavsov@gmail.com
 
-Thanks you 
+Thank you! 
