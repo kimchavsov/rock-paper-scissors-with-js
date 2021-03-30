@@ -1,12 +1,37 @@
 
+// Set up the variable
+let comScore = 0;
+let playerScore = 0;
+let playerSelection;
+
+// Select DOM
+const displayMy = document.querySelector("#playerscore");
+const displayCom = document.querySelector("#computerscore")
+const buttons = document.querySelectorAll(".btn-choice");
+const reset = document.querySelector("#btn-reset")
+
+// Display score to HTML
+displayCom.textContent = `${comScore}`;
+displayMy.textContent = `${playerScore}`;
+
+
+function playerChoose(e) {
+  playerSelection = this.id;
+  console.log(playerSelection)
+  game();
+  displayCom.textContent = `${comScore}`;
+  displayMy.textContent = `${playerScore}`;
+}
+
+// Generate ComChoice
 function computerPlay () {
   let choice = ["rock", "paper", "scissors"];
   let com_pick = choice[Math.floor(Math.random() * 3)];
   return com_pick;
 }
 
+//Taking user choice and comchoice and determine who win
 function playRound (playerSelection, computerSelection) {
-
   // coditional check who win
   if (playerSelection === computerSelection) {
     return "Draw!!!!!";
@@ -45,29 +70,25 @@ function playRound (playerSelection, computerSelection) {
 
 // Game play 
 function game() {
-  let round = 5;
-  comScore = 0
-  playerScore = 0
-  // Loop each round
-  while (round > 0) {
-    const computerSelection = computerPlay();
-    const playerSelection = prompt("Enter the your choice:").toLowerCase();
-    console.log(playerScore)
-    console.log(comScore)
-    alert(playRound(playerSelection, computerSelection))
-    round--;
-  }
-  console.log(playerScore, comScore)
-  if (playerScore > comScore) {
-    return "You win this game!!"
-  } else if (playerScore < comScore) {
-    return "Computer win this game!!!"
+  if (playerScore == 5) {
+    return alert("You win the game!!\nClick 'Reset' to play again!!!!!")
+  } else if (comScore == 5) {
+    return alert("Computer win the game!!!\nClick 'Reset' to play again!!!!!")
   }
   else {
-    return "Game is Tie!!!!!"
-  };
+    alert(playRound(playerSelection, computerPlay()));
+  }
 }
 
-let comScore = 0;
-let playerScore = 0;
-alert(game());
+function clickReset() {
+  playerScore = 0;
+  comScore = 0;
+  displayCom.textContent = `${comScore}`;
+  displayMy.textContent = `${playerScore}`;
+  alert("Game Reset!!!!")
+}
+
+// Add EventListener to the game when clicked 
+buttons.forEach(button => button.addEventListener('click', playerChoose));
+
+reset.addEventListener('click', clickReset);
