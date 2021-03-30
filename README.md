@@ -1,9 +1,11 @@
 <h1>This is a Rock Paper Scissors Project</h1>
 
-This game is require user to prompt their choice of rock paper or scissors 
-Then it compare with the Computer choice to see who win the round
+This project is to create a game of Rock Paper Scissor that player can choose the 3 buttons of their choice.
 
-Later compare the score and see who is the winner!
+If the player beat the Computer, player gain one point and viceversa. The winner is determine by who reach the 5 points first.
 
-This the first version of the game
-Need abit more refine to make it better
+This project is building for the purpose of learning
+I open to get feedback. 
+Please contact me via: kimchavsov@gmail.com
+
+Thanks you 
