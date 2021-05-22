@@ -4,8 +4,5 @@ This project is to create a game of Rock Paper Scissor that player can choose th
 
 If the player beat the Computer, player gain one point and viceversa. The winner is determine by who reach the 5 points first.
 
-This project is building for the purpose of learning
-I open to get feedback. 
-Please contact me via: kimchavsov@gmail.com
 
 Thank you! 
